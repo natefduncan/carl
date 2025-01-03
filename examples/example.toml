@@ -1,0 +1,21 @@
+name = "MC Example"
+
+[[assumptions]]
+name = "Assumption 1"
+sheet = "Sheet1"
+range = "A1"
+distribution.name = "Uniform" 
+distribution.low = 1
+distribution.high = 5
+
+[[assumptions]]
+name = "Assumption 2"
+sheet = "Sheet1"
+range = "A2"
+distribution.name = "Poisson" 
+distribution.lam = 2
+
+[[outputs]]
+name = "Output 1"
+sheet = "Sheet1"
+range = "A3:C3"

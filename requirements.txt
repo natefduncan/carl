@@ -1,0 +1,5 @@
+click
+python-dotenv
+ooo-dev-tools
+numpy
+tqdm
