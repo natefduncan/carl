@@ -1,9 +1,11 @@
 from typing import List
 from dataclasses import dataclass, field
+from dataclasses_json import dataclass_json
 import tomllib
 
 from carl.distribution import get_dist_by_str, Distribution
 
+@dataclass_json
 @dataclass
 class Assumption:
     name: str
@@ -19,6 +21,7 @@ class Assumption:
         data["distribution"] = d_class(**d)
         return cls(**data)
 
+@dataclass_json
 @dataclass
 class Output:
     name: str
@@ -29,6 +32,7 @@ class Output:
     def from_data(cls, data):
         return cls(**data)
 
+@dataclass_json
 @dataclass
 class Config:
     name: str

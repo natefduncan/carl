@@ -22,7 +22,8 @@ from ooodev.loader import Lo
 from ooodev.calc import CalcDoc, CalcSheet
 
 def connect_socket():
-    Lo.load_office(Lo.ConnectSocket())
+    options = Lo.Options(log_level=0)
+    Lo.load_office(Lo.ConnectSocket(), opt=options)
 
 def open_doc(path: str) -> CalcDoc:
     return CalcDoc.open_doc(path, visible=False)

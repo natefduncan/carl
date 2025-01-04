@@ -3,3 +3,4 @@ python-dotenv
 ooo-dev-tools
 numpy
 tqdm
+dataclasses-json

@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field
+from dataclasses_json import dataclass_json
 from typing import List, Dict, Any
 import numpy as np
 from tqdm import tqdm
@@ -6,12 +7,14 @@ from tqdm import tqdm
 from carl.model import Model
 from carl.config import Config
 
+@dataclass_json
 @dataclass
 class Iteration:
     i: int
     assumptions: Dict[str, float] = field(default_factory=dict)
     outputs: Dict[str, Any] = field(default_factory=dict)
 
+@dataclass_json
 @dataclass
 class Simulation:
     model: Model

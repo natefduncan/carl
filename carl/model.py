@@ -1,6 +1,8 @@
 from dataclasses import dataclass
+from dataclasses_json import dataclass_json
 from carl import libreoffice
 
+@dataclass_json
 @dataclass
 class Model:
     path: str

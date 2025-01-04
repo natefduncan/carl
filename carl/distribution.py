@@ -1,5 +1,6 @@
 import numpy as np
 from dataclasses import dataclass
+from dataclasses_json import dataclass_json
 
 def get_dist_by_str(name: str):
     return {
@@ -9,11 +10,13 @@ def get_dist_by_str(name: str):
         "poisson": Poisson,
     }.get(name.lower())
 
+@dataclass_json
 @dataclass
 class Distribution:
     def sample(self, _rng) -> float:
         return 0
 
+@dataclass_json
 @dataclass
 class Normal(Distribution):
     mu: float
@@ -22,6 +25,7 @@ class Normal(Distribution):
     def sample(self, rng):
         return rng.normal(self.mu, self.sigma)
 
+@dataclass_json
 @dataclass
 class Uniform(Distribution):
     low: float
@@ -30,6 +34,7 @@ class Uniform(Distribution):
     def sample(self, rng):
         return rng.uniform(self.low, self.high)
 
+@dataclass_json
 @dataclass
 class Binomial(Distribution):
     n: float
@@ -38,6 +43,7 @@ class Binomial(Distribution):
     def sample(self, rng):
         return rng.binomial(self.n, self.p)
 
+@dataclass_json
 @dataclass
 class Poisson(Distribution):
     lam: float
